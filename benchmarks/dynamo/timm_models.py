@@ -77,6 +77,7 @@ REQUIRE_HIGHER_TOLERANCE = {
     "mobilenetv3_large_100",
     "sebotnet33ts_256",
     "selecsls42b",
+    "cspdarknet53",
 }
 
 REQUIRE_HIGHER_TOLERANCE_FOR_FREEZING = {
@@ -215,6 +216,12 @@ class TimmRunner(BenchmarkRunner):
     def guard_on_nn_module_models(self):
         return {
             "convit_base",
+        }
+
+    @property
+    def inline_inbuilt_nn_modules_models(self):
+        return {
+            "lcnet_050",
         }
 
     @download_retry_decorator
